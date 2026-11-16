@@ -4,16 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Chen Mo 的个人主页">
-  <title>Chen Mo · 个人主页</title>
+  <title>Chen Mo · 个人主页（深色版）</title>
   <style>
     :root {
-      --blue: #2563eb;
-      --blue-deep: #1e3a8a;
-      --blue-soft: #dbeafe;
-      --ink: #0f172a;
-      --muted: #64748b;
-      --line: #e2e8f0;
-      --bg: #f0f6ff;
+      --blue: #6aa6ff;
+      --blue-deep: #9ccbff;
+      --blue-soft: #22365c;
+      --ink: #ffffff;
+      --soft: #dbe4f3;
+      --muted: #8ea0bd;
+      --line: #243352;
+      --bg: #0d1729;
+      --card: #0f1a2e;
+      --card-2: #16233c;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,7 +26,7 @@
       display: grid;
       place-items: center;
       padding: 24px;
-      background: linear-gradient(160deg, #f7fbff 0%, var(--bg) 55%, #e3edff 100%);
+      background: linear-gradient(160deg, #050a14 0%, var(--bg) 55%, #142442 100%);
       color: var(--ink);
       font-family: system-ui, -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -35,10 +38,10 @@
       width: 100%;
       max-width: 560px;
       padding: 56px 48px 40px;
-      background: #fff;
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: 18px;
-      box-shadow: 0 18px 50px -24px rgba(37, 99, 235, .35);
+      box-shadow: 0 24px 60px -24px rgba(0, 0, 0, .65);
       overflow: hidden;
       animation: rise .7s cubic-bezier(.2, .7, .3, 1) both;
     }
@@ -48,7 +51,7 @@
       position: absolute;
       inset: 0 0 auto 0;
       height: 5px;
-      background: linear-gradient(90deg, var(--blue-deep), var(--blue), #7dd3fc);
+      background: linear-gradient(90deg, #1e40af, var(--blue), var(--blue-deep));
     }
 
     .eyebrow {
@@ -64,7 +67,7 @@
       font-size: clamp(24px, 5vw, 32px);
       font-weight: 600;
       letter-spacing: -.01em;
-      color: var(--blue-deep);
+      color: var(--ink);
     }
 
     .name {
@@ -74,7 +77,7 @@
       line-height: 1.15;
       letter-spacing: -.03em;
       color: var(--blue);
-      background: linear-gradient(120deg, var(--blue) 20%, #60a5fa 100%);
+      background: linear-gradient(120deg, #8fc0ff 20%, #5b8dff 100%);
       -webkit-background-clip: text;
       background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -92,16 +95,109 @@
       height: 3px;
       margin: 32px 0 24px;
       border-radius: 2px;
-      background: var(--blue-soft);
+      background: var(--blue);
     }
 
     .intro {
       max-width: 42ch;
       font-size: 16px;
-      color: #334155;
+      color: var(--ink);
     }
 
     .intro strong { color: var(--blue-deep); font-weight: 600; }
+
+    /* 个人简历 */
+    .resume { margin-top: 40px; }
+
+    .resume > h2 {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .resume > h2 span {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .resume-block { margin-bottom: 24px; }
+
+    .resume-block h3 {
+      margin-bottom: 10px;
+      color: var(--blue-deep);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .resume-block > p { color: var(--soft); font-size: 14px; }
+
+    .timeline {
+      list-style: none;
+      display: grid;
+      gap: 16px;
+      padding-left: 16px;
+      border-left: 2px solid var(--line);
+    }
+
+    .timeline li { position: relative; }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -21px;
+      top: 7px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: 0 0 0 3px var(--card);
+    }
+
+    .timeline .meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 12px;
+    }
+
+    .timeline .period {
+      color: var(--muted);
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timeline .role {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .timeline li p {
+      margin-top: 4px;
+      color: var(--soft);
+      font-size: 14px;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .tags span {
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--card-2);
+      color: var(--soft);
+      font-size: 12px;
+    }
 
     footer {
       margin-top: 44px;
@@ -151,6 +247,50 @@
       喜欢把复杂的事情做简单，也喜欢在代码与文字之间，找一点<strong>安静的秩序</strong>。
       这里是我在网络上的一小块自留地，随手记下想法与作品。
     </p>
+
+    <section class="resume">
+      <h2>个人简历 <span>Résumé</span></h2>
+
+      <div class="resume-block">
+        <h3>关于我</h3>
+        <p>一名把「少即是多」当成习惯的开发者与写作者，往返于代码与文字之间。喜欢把复杂问题拆到足够小，再安静地拼回去。</p>
+      </div>
+
+      <div class="resume-block">
+        <h3>经历</h3>
+        <ul class="timeline">
+          <li>
+            <div class="meta"><span class="period">2022 — 至今</span><span class="role">高级前端工程师 · 星野科技</span></div>
+            <p>主导设计系统与数据控制台，把原本十来步的操作流程，收敛成一条几乎不用思考的默认路径。</p>
+          </li>
+          <li>
+            <div class="meta"><span class="period">2019 — 2022</span><span class="role">前端工程师 · 纸鸢工作室</span></div>
+            <p>从零搭建内容平台的 Web 端，顺手把后台编辑器的排版体验重新打磨了一遍。</p>
+          </li>
+          <li>
+            <div class="meta"><span class="period">2017 — 2019</span><span class="role">独立开发者</span></div>
+            <p>接一些「小而完整」的项目，写过趁手的工具，也写过没人看、但自己很喜欢的长文。</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="resume-block">
+        <h3>技能</h3>
+        <div class="tags">
+          <span>TypeScript</span>
+          <span>React</span>
+          <span>Node.js</span>
+          <span>设计系统</span>
+          <span>技术写作</span>
+          <span>信息架构</span>
+        </div>
+      </div>
+
+      <div class="resume-block">
+        <h3>教育</h3>
+        <p>2013 — 2017 · 计算机科学与技术，工学学士。在校期间最常待的地方，是图书馆靠窗的那一排。</p>
+      </div>
+    </section>
 
     <footer><span class="dot" aria-hidden="true"></span>© 2026 Chen Mo · 保持简单，保持好奇</footer>
   </main>
